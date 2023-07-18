@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{%load static%}
+{% load custom_tags %}
+
+
+{% block content %}
+
+<section class="main-content-container">
+    <div class="container">
+        <div class="main-content-container-box">
+            <div class="main-content-inner-boxes loging_div">
+                <div class="main-content-inner-box-filter">
+                    <h2 style="text-align: center;" class="main-content-inner-box-filter-heading">OTP Verification</h2>
+                    <form id="login_form" action="{% url 'verify-otp' %}" method="POST">
+                        {% csrf_token %}
+                        {% if messages %}
+                          <ul class="error_messages">
+                            {% for message in messages %}
+                              <p class="bg-danger text-white error_messages_login ">{{ message }}</p>
+                            {% endfor %}
+                          </ul>
+                        {% endif %}
+                        {% if success_messages %}
+                          <ul class="error_messages">
+                            {% for message in success_messages %}
+                              <p class="text-success text-white error_messages_login ">{{ message }}</p>
+                            {% endfor %}
+                          </ul>
+                        {% endif %}
+                        <div class="row">
+                            <div class="col-md-12 moc_input">
+                                <label for="otp">OTP send on {{ request_for }}</label>
+                                <input type="number" id="otp" name="otp" min = "0000" max="9999">
+                            </div>
+
+                            <div style="text-align: center;" class="col-md-12 moc_input">
+                                <button class="main-content-inner-box-export-btn" style="outline: none;">Submit</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

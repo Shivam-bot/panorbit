@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{%load static%}
+{% load custom_tags %}
+
+{% block content %}
+<section class="main-content-container" xmlns: xmlns: xmlns:>
+    <div class="container">
+        <div class="main-content-container-box">
+
+            <div class="main-content-inner-boxes loging_div">
+                <div class="main-content-inner-box-filter">
+
+                    <h2 style="text-align: center;" class="main-content-inner-box-filter-heading">Sign Up</h2>
+                    <form method="POST" action="{% url 'signup' %}" id="sign_up_form">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-12 moc_input">
+                                <label for="reg_name">First Name</label>
+                                <input type="text" id="reg_name" name="first_name" placeholder="Enter first name" value="{{form_data.first_name}}">
+                                {% if form_error.first_name %}
+                                <div class="error_class">{{ form_error.first_name }}</div>
+                                {% endif %}
+                            </div>
+
+                            <div class="col-md-12 moc_input">
+                                <label for="reg_last_name">Last Name</label>
+                                <input type="text" id="reg_last_name" name="last_name" placeholder="Enter last name" value="{{form_data.last_name}}">
+                                {% if form_error.last_name %}
+                                <div class="error_class">{{ form_error.last_name }}</div>
+                                {% endif %}
+                            </div>
+
+                            <div class="col-md-12 moc_input">
+                                <label for="reg_email">Email</label>
+                                <input type="text" id="reg_email" name="email" placeholder="Enter email"  value="{{form_data.email}}">
+                                {% if form_error.email %}
+                                <div class="error_class">{{ form_error.email }}</div>
+                                {% endif %}
+                            </div>
+
+
+                            <div class="col-md-12 moc_input">
+                                <label for="reg_gender">Gender</label>
+                                    <select name="gender" id="reg_gender">
+                                        <option value="">Select Gender</option>
+                                        {% for gender in  gender_choices %}
+                                            <option value={{gender.0}} {% if form_data  %} {{gender.0|match_select_value:form_data.gender}} {% endif %}>{{gender.1}}</option>
+                                        {% endfor %}
+
+                                    </select>
+                                {% if form_error.gender %}
+                                <div class="error_class">{{ form_error.gender }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-12 moc_input">
+                                <label for="reg_contact">Mobile Number</label>
+                                <input type="text" id="reg_contact" name="mob_no" placeholder="Enter mobile number" value={{form_data.mob_no}}>
+                                {% if form_error.mob_no %}
+                                <div class="error_class">{{ form_error.mob_no }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-12 moc_input" style = "display:none">
+                                <label for="reg_savetry">Save try</label>
+                                <input type="text" id="reg_savetry" name="save_try" value="yes">
+                            </div>
+
+
+                            <div class="col-md-12 moc_input">
+                                <p>Already have an account? <a href="/login">Login</a></p>
+                            </div>
+
+                            <div style="text-align: center;" class="col-md-12 moc_input">
+                                <button class="main-content-inner-box-export-btn" style="outline: none;">Sign Up</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock content %}

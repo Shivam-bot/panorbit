@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="main-content-container">
+    <div class="container">
+        <div class="main-content-container-box">
+            <div class="main-content-inner-boxes loging_div">
+                <div class="main-content-inner-box-filter">
+                    <h2 style="text-align: center;" class="main-content-inner-box-filter-heading">Login</h2>
+                    <form id="login_form" action="{% url 'send_otp' %}" method="POST">
+                        {% csrf_token %}
+                        {% if messages %}
+                          <ul class="error_messages">
+                            {% for message in messages %}
+                              <p class="bg-danger text-white error_messages_login ">{{ message }}</p>
+                            {% endfor %}
+                          </ul>
+                        {% endif %}
+                        <div class="row">
+                            <div class="col-md-12 moc_input">
+                                <label for="login_email">Email</label>
+                                <input type="text" id="login_email" name="email">
+                            </div>
+                            <div class="col-md-12 moc_input" style = "display:none">
+                                <label for="reg_savetry">Save try</label>
+                                <input type="text" id="reg_savetry" name="save_try" value="yes">
+                            </div>
+
+                            <div class="col-md-12">
+                                <p>Don't have an account ? <a href="{% url 'signup' %}">Sign Up</a></p>
+                            </div>
+
+                            <div style="text-align: center;" class="col-md-12 moc_input">
+                                <button class="main-content-inner-box-export-btn" style="outline: none;">Send OTP</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

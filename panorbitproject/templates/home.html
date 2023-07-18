@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{%load static%}
+{% load custom_tags %}
+
+{% block content %}
+<section class="main-content-container" xmlns: xmlns: xmlns:>
+    <div class="container">
+        <div class="main-content-container-box">
+            <div class="main-content-inner-boxes">
+                <div class="main-content-inner-box-filter" style="display:flex,justify-content: center,align-items: center;">
+                    <form class="form-inline">
+                        {% csrf_token %}
+                        <div id="parent_search">
+                            <p>Panorbit Search</p>
+                            <input class="form-control mr-sm-2 col-md-12 moc_input" type="search" id = "search-input" placeholder="Search" aria-label="Search" oninput="myFunction()">
+                            <div id="search_result"  class = "col-md-12 moc_input">
+                        </div>
+                         <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="searchAll()">Search</button>
+
+                        </div>
+                        <div class="table-content" id = "table-content">
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

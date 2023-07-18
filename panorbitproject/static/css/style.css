@@ -1,0 +1,158 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+	font-family: 'Poppins', sans-serif;
+}
+
+.header{
+	box-shadow: 0px 3px 10px #f1e2e2;
+}
+
+.header-content-container{
+	padding: 5rem 2rem;
+	text-align: center;
+}
+
+
+
+.container {
+	padding: 0;
+	margin-top: 5px;
+}
+
+
+.main-content-container-box{
+	display: inline-block;
+	width: 100%;
+	padding: 2rem 2rem 5rem;
+	margin: 3rem 0rem;
+	border-radius: 8px;
+}
+
+.main-content-inner-boxes {
+	background-color: #e7efe0;
+	border-radius: 2px;
+	padding: 2rem;
+	margin-bottom: 2rem;
+}
+
+
+
+.main-content-inner-box-filter-heading{
+	font-size: 30px;
+	margin-bottom: 2rem;
+	font-weight: bold;
+}
+
+
+.main-content-inner-box-export-btn{
+	color: #fff;
+	background-color: #5b922f;
+	padding: 10px 2rem;
+	border:none;
+	outline: none;
+	margin-bottom: 20px;
+}
+
+.outline_button {
+	color: #5b922f;
+	background: none;
+	padding: 9px 2rem;
+	border: none;
+	outline: none;
+	border: 1px solid;
+}
+
+.moc_input input {
+	
+	padding: 8px 5px;
+	
+	outline: none;
+	width: 100%;
+	color: #6f6f6f;
+	margin-bottom: .25rem;
+	border: 1px black solid;
+	margin-top: 7px;
+	background-color: white;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+.moc_input label {
+    margin-left: 0px;
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	height: calc(1.5em + .75rem + 2px);
+	padding: .375rem .75rem;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.5;
+	color:grey;
+	margin-top: 7px;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid #000407;
+	border-radius: 2px;
+	transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+	background-color: white;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+.table-bordered {
+	border: 1px solid #dee2e6;
+	background: #fff;
+}
+.table th {
+	background: #5b922f;
+	color: #fff;
+	font-weight: normal;
+}
+
+.table thead th {
+	font-size: 12px;
+}
+.table td {
+    font-size: 14px;
+    vertical-align: middle !important;
+}
+
+.error_class{
+	border: 1px solid red !important;
+}
+
+.loging_div{
+	width: 50%;
+    margin: auto;
+}
+
+
+.section {
+    position: relative;
+	width: 100%;
+	display: block;
+}
+
+.error
+{
+    color: red;
+}
+.error_messages_login{
+	padding: 4px;
+}
+
+
+.table th {
+    background: #5b922f !important;
+    color:unset;
+    font-weight: normal;
+}
+
+.login-logout{
+ float: right;
+
+}
